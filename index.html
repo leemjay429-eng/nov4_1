@@ -1,0 +1,781 @@
+<!-- 모바일 좌우 패딩 16 -->
+<script>
+if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
+  var s=document.createElement('style');
+  s.textContent='body{margin:0}@media(max-width:700px){.contents_div{padding:0 16px}}@media(max-width:576px){.contents_div br{display:inline!important}}';
+  document.head.appendChild(s);
+}
+</script>
+<script>
+(function(){
+  try{
+    if(!document.querySelector('meta[name="viewport"]')){
+      var m=document.createElement('meta');
+      m.setAttribute('name','viewport');
+      m.setAttribute('content','width=device-width, initial-scale=1');
+      (document.head||document.getElementsByTagName('head')[0]||document.documentElement).appendChild(m);
+    }
+  }catch(e){}
+})();
+</script>
+<div class="contents_div">
+<style>
+@font-face{font-family:'Pretendard';src:url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Thin.woff2') format('woff2');font-weight:100;font-display:swap}
+@font-face{font-family:'Pretendard';src:url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-ExtraLight.woff2') format('woff2');font-weight:200;font-display:swap}
+@font-face{font-family:'Pretendard';src:url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Light.woff2') format('woff2');font-weight:300;font-display:swap}
+@font-face{font-family:'Pretendard';src:url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Regular.woff2') format('woff2');font-weight:400;font-display:swap}
+@font-face{font-family:'Pretendard';src:url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Medium.woff2') format('woff2');font-weight:500;font-display:swap}
+@font-face{font-family:'Pretendard';src:url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-SemiBold.woff2') format('woff2');font-weight:600;font-display:swap}
+@font-face{font-family:'Pretendard';src:url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Bold.woff2') format('woff2');font-weight:700;font-display:swap}
+@font-face{font-family:'Pretendard';src:url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-ExtraBold.woff2') format('woff2');font-weight:800;font-display:swap}
+@font-face{font-family:'Pretendard';src:url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Black.woff2') format('woff2');font-weight:900;font-display:swap}
+@font-face{font-family:'Paperozi';src:url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-1Thin.woff2') format('woff2');font-weight:100;font-display:swap}
+@font-face{font-family:'Paperozi';src:url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-2ExtraLight.woff2') format('woff2');font-weight:200;font-display:swap}
+@font-face{font-family:'Paperozi';src:url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-3Light.woff2') format('woff2');font-weight:300;font-display:swap}
+@font-face{font-family:'Paperozi';src:url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-4Regular.woff2') format('woff2');font-weight:400;font-display:swap}
+@font-face{font-family:'Paperozi';src:url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-5Medium.woff2') format('woff2');font-weight:500;font-display:swap}
+@font-face{font-family:'Paperozi';src:url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-6SemiBold.woff2') format('woff2');font-weight:600;font-display:swap}
+@font-face{font-family:'Paperozi';src:url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-7Bold.woff2') format('woff2');font-weight:700;font-display:swap}
+@font-face{font-family:'Paperozi';src:url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-8ExtraBold.woff2') format('woff2');font-weight:800;font-display:swap}
+@font-face{font-family:'Paperozi';src:url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-9Black.woff2') format('woff2');font-weight:900;font-display:swap}
+@font-face{font-family:'GmarketSans';src:url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');font-weight:500;font-display:swap}
+
+/* ===== 변수 ===== */
+.contents_div .ktx-wrap{
+  max-width:800px; margin:0 auto; container-type:inline-size;
+  /* Title */
+  --fs-h2:clamp(20px, min(23px + (100cqi - 388px) * 0.02185, 22px + (100cqi - 343px) * 0.02223, 20px + (100cqi - 318px) * 0.08), 32px); --fs-foot:31px; --fs-h3:21px;
+  /* Body */
+  --fs-body:17px; --fs-lead:16px; --fs-info:16px; --fs-cta:16px; --fs-arrow:17px;
+  --fs-nav:16px; --fs-kicker:15px; --fs-num:14px; --fs-tagcap:13.5px;
+  --fs-label:13px; --fw-label:700; --fs-check:11px; --fs-caption:11px; --fs-hash:12.5px;
+  /* 간격 */
+  --gut:clamp(22px, 6.25%, 50px);
+  --band:clamp(40px, calc(7.9% + 6.8px), 70px);
+  --card-py:30px; --card-px:28px;
+  --kick:32px; --rv-y:24px; --bub-q-y:1px; --mark-px:3px; --kick-gap:9px; --kick-slash:13px; --lb-h:24px; --lb-px:11px;
+  --img-ratio:62.5%; --hero-ratio:98.75%;
+  /* 히어로 텍스트: 원본 1600 기준 px ÷ 16 = cqi (좌 119 · 바닥 133 · 타이틀 128 · 서브 55) */
+  --hero-x:7.4375cqi; --hero-y:8.3125cqi; --hero-title:8cqi; --hero-sub:max(10px, 3.4375cqi); --logo-h:14px;   /* 히어로 원본 1600×1580 — 글자 잘림 방지 */
+  /* 색 */
+  /* 히어로: KTX 블루 + 네온 그린 */
+  --c-main:#1a4cb0; --c-main-dk:#0e2b6e;
+  --c-ink:#121a2e; --c-sub:#58627a;
+  --c-acc:#1d52c4; --c-acc-lt:#afff5e;
+  --c-intro:#eef2fa; --c-gray:#f8f9fc; --c-mid:#e2e8f5; --c-foot:#050c22;
+  --c-s1:#1e3770; --c-s4-top:#1c3268; --c-s4-btm:#111f45;
+  --c-line:#d2d9e7;
+  font-family:'Pretendard',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
+  font-size:var(--fs-body); line-height:1.6; letter-spacing:-0.02em; color:var(--c-ink);
+  word-break:keep-all;
+}
+
+/* ===== Reset ===== */
+.contents_div .ktx-wrap, .contents_div .ktx-wrap *,
+.contents_div .ktx-wrap *::before, .contents_div .ktx-wrap *::after{ box-sizing:border-box; }
+.contents_div .ktx-wrap :where(h1,h2,h3,p,ul,ol,li,dl,dt,dd,figure,table){ margin:0; padding:0; }
+.contents_div .ktx-wrap :where(ul,ol){ list-style:none; }
+.contents_div .ktx-wrap :where(img){ max-width:100%; display:block; border:0; }
+.contents_div .ktx-wrap :where(h1,h2,h3),
+.contents_div .ktx-foot-title{ font-family:'Paperozi','Pretendard',sans-serif; word-break:keep-all; }
+
+.contents_div h1.ktx-sr,
+.contents_div .ktx-sr{
+  position:absolute; width:1px; height:1px; padding:0; margin:-1px;
+  overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap; border:0;
+}
+
+/* 조건부 줄바꿈 */
+.contents_div .ktx-br::before{ content:'\A'; white-space:pre; }
+.contents_div .ktx-br--mo,
+.contents_div .ktx-br--mo-wide,
+.contents_div .ktx-br--m420{ display:none; }
+
+/* ===== 히어로 ===== */
+.contents_div .ktx-hero{ position:relative; width:100%; }
+.contents_div .ktx-fig{ position:relative; width:100%; overflow:hidden; background:#eee; }
+.contents_div .ktx-fig::before{ content:''; display:block; padding-top:var(--img-ratio); }
+.contents_div .ktx-hero .ktx-fig::before{ padding-top:var(--hero-ratio); }
+.contents_div .ktx-fig img{
+  position:absolute; inset:0; width:100%; height:100%;
+  object-fit:cover; object-position:center; color:transparent;
+}
+.contents_div .ktx-nw{ white-space:nowrap; }
+.contents_div .ktx-hero-txt{
+  position:absolute; left:var(--hero-x); right:var(--hero-x); bottom:var(--hero-y); z-index:1;
+  text-align:left; pointer-events:none;
+}
+.contents_div .ktx-hero-sub{
+  font-family:'GmarketSans','Pretendard',sans-serif; font-size:var(--hero-sub); font-weight:500;
+  line-height:1.2; letter-spacing:-0.04em; color:#fff; white-space:nowrap;
+}
+.contents_div .ktx-hero-title{
+  margin:.41em 0 -.135em -.03em; font-size:var(--hero-title); font-weight:800;
+  line-height:1.15; letter-spacing:-0.045em; color:var(--c-acc-lt); white-space:nowrap;
+}
+
+/* ===== 모션 ===== */
+/* 히어로: 뷰포트 30% 진입 시 재생 — 사진 줌아웃 → 서브 떠오름 → 타이틀 왼쪽부터 닦아내듯 등장 */
+.contents_div .ktx-hero.is-ready .ktx-fig img{ opacity:0; transform:scale(1.08); }
+.contents_div .ktx-hero.is-ready .ktx-hero-sub{ opacity:0; transform:translateY(.6em); }
+.contents_div .ktx-hero.is-ready .ktx-hero-title{ opacity:0; transform:translateX(-.3em); clip-path:inset(-20% 100% -20% -5%); }
+.contents_div .ktx-hero.is-ready.is-in .ktx-fig img{
+  opacity:1; transform:scale(1);
+  transition:opacity 1s ease, transform 2.6s cubic-bezier(.2,.7,.2,1);
+}
+.contents_div .ktx-hero.is-ready.is-in .ktx-hero-sub{
+  opacity:1; transform:none;
+  transition:opacity .8s ease .5s, transform .9s cubic-bezier(.2,.7,.2,1) .5s;
+}
+.contents_div .ktx-hero.is-ready.is-in .ktx-hero-title{
+  opacity:1; transform:none; clip-path:inset(-20% -5% -20% -5%);
+  transition:opacity .3s ease .8s, transform 1.1s cubic-bezier(.2,.7,.2,1) .8s, clip-path 1.1s cubic-bezier(.7,0,.2,1) .8s;
+}
+/* 내비 아래 스크롤 등장 — 아래에서 떠오름 */
+.contents_div .ktx-rv{ opacity:0; transform:translateY(var(--rv-y)); }
+.contents_div .ktx-rv.is-in{
+  opacity:1; transform:none;
+  transition:opacity .7s ease, transform .8s cubic-bezier(.2,.7,.2,1);
+}
+
+/* ===== 앵커 내비 ===== */
+.contents_div .ktx-nav{ width:100%; background:var(--c-main-dk); padding:0 var(--gut); }
+.contents_div .ktx-nav ul{ display:grid; grid-template-columns:repeat(4,1fr); height:70px; }
+.contents_div .ktx-nav li{ position:relative; }
+.contents_div .ktx-nav li + li::before{
+  content:''; position:absolute; left:0; top:50%; width:1px; height:14px;
+  margin-top:-7px; background:rgba(255,255,255,.28);
+}
+.contents_div .ktx-nav-btn{
+  display:flex; align-items:center; justify-content:center;
+  width:100%; height:100%; padding:0 4px; margin:0;
+  background:none; border:0; border-radius:0; cursor:pointer;
+  font-family:inherit; font-size:var(--fs-nav); font-weight:700; line-height:1.4;
+  letter-spacing:-0.03em; color:rgba(255,255,255,.68);
+  white-space:nowrap; transition:color .2s;
+  -webkit-tap-highlight-color:transparent;
+}
+.contents_div .ktx-nav-btn span{ position:relative; padding:4px 0; }
+.contents_div .ktx-nav-btn span::after{
+  content:''; position:absolute; left:0; right:0; bottom:0; height:2px;
+  background:var(--c-acc-lt); transform:scaleX(0); transition:transform .25s;
+}
+.contents_div .ktx-nav-btn:focus{ outline:none; }
+.contents_div .ktx-nav-btn.is-on{ color:#fff; }
+.contents_div .ktx-nav-btn.is-on span::after{ transform:scaleX(1); }
+.contents_div .ktx-nav-btn:active{ color:#fff; }
+
+/* ===== 섹션 공통 ===== */
+.contents_div .ktx-sec{ width:100%; padding:var(--band) var(--gut); text-align:center; }
+.contents_div .ktx-sec:focus{ outline:none; }
+.contents_div .ktx-sec--intro{ background:var(--c-intro); }
+/* 티커 (인트로) — 배경 없이 위아래 선 + 좌우 페이드 */
+.contents_div .ktx-ticker{
+  position:relative; width:100%; max-width:600px; height:var(--kick); margin:0 auto 28px;
+  border-top:1px solid rgba(29,82,196,.2); border-bottom:1px solid rgba(29,82,196,.2);
+  background:rgba(255,255,255,.5);
+  overflow:hidden;
+  -webkit-mask-image:linear-gradient(to right, transparent 0, #000 18%, #000 82%, transparent 100%);
+          mask-image:linear-gradient(to right, transparent 0, #000 18%, #000 82%, transparent 100%);
+}
+.contents_div .ktx-ticker-track{
+  display:flex; align-items:center; height:100%; width:max-content;
+  animation:ktx-tick 30s linear infinite;
+}
+.contents_div .ktx-ticker:hover .ktx-ticker-track{ animation-play-state:paused; }
+.contents_div .ktx-ticker-list{ display:flex; align-items:center; flex:0 0 auto; }
+.contents_div .ktx-ticker-list li{
+  display:inline-flex; align-items:center; flex:0 0 auto; padding-right:26px;
+  font-size:var(--fs-kicker); font-weight:700; line-height:1; letter-spacing:.01em;
+  color:var(--c-main-dk); white-space:nowrap;
+}
+.contents_div .ktx-ticker-list li::before{
+  content:''; flex:0 0 auto; width:5px; height:5px; margin-right:10px;
+  border-radius:50%; background:var(--c-acc);
+}
+.contents_div .ktx-ticker-list li.ktx-ticker-logo{ gap:7px; }
+.contents_div .ktx-ticker-list li.ktx-ticker-logo::before{ content:none; }
+.contents_div .ktx-ticker-logo img{ display:block; width:auto; height:var(--logo-h); }
+.contents_div .ktx-ticker-x{ color:var(--c-sub); font-weight:500; }
+@keyframes ktx-tick{ from{ transform:translateX(0); } to{ transform:translateX(-50%); } }
+.contents_div .ktx-sec--s1{ background:var(--c-s1); color:#fff; }
+/* 전체화면 배경 섹션 (01 9장) — 사진 맨 위·폭 꽉, 하단 150px 페이드 */
+.contents_div .ktx-sec--full{ display:grid; padding:0; overflow:hidden; isolation:isolate; }
+.contents_div .ktx-sec--full > .ktx-sec-bg,
+.contents_div .ktx-sec--full > .ktx-sec-in{ grid-area:1 / 1; min-width:0; }
+.contents_div .ktx-sec--full > .ktx-sec-bg{
+  position:relative; z-index:-1; align-self:start; justify-self:start;
+  display:block; width:100%; max-width:none; height:auto; margin:0;
+  pointer-events:none; user-select:none;
+  -webkit-mask-image:linear-gradient(to bottom, #000 calc(100% - 150px), transparent 100%);
+          mask-image:linear-gradient(to bottom, #000 calc(100% - 150px), transparent 100%);
+}
+.contents_div .ktx-sec--full > .ktx-sec-in{ padding:var(--band) var(--gut); }
+.contents_div .ktx-sec--s2{ background:var(--c-gray); }
+.contents_div .ktx-sec--s3{ background:var(--c-mid); }
+.contents_div .ktx-sec--s4{ background:linear-gradient(180deg, var(--c-s4-top) 0%, var(--c-s4-btm) 100%); color:#fff; }
+
+.contents_div .ktx-kicker{
+  display:inline-flex; align-items:center; gap:var(--kick-gap); margin-bottom:14px;
+  font-size:var(--fs-kicker); font-weight:700; line-height:1.2; letter-spacing:.01em;
+  color:var(--c-acc); white-space:nowrap;
+}
+/* 키커 B안: 섹션 번호 + 사선 */
+.contents_div .ktx-kicker-num{
+  display:inline-flex; align-items:center; gap:var(--kick-gap); flex:0 0 auto;
+  font-size:calc(var(--fs-kicker) + 2px); font-weight:800; line-height:1; letter-spacing:-0.01em;
+}
+.contents_div .ktx-kicker-num::after{
+  content:''; flex:0 0 auto; width:1.5px; height:var(--kick-slash);
+  background:currentColor; opacity:.4; transform:rotate(20deg);
+}
+.contents_div .ktx-sec--s1 .ktx-kicker,
+.contents_div .ktx-sec--s4 .ktx-kicker{ color:var(--c-acc-lt); }
+
+.contents_div .ktx-h2{
+  font-size:var(--fs-h2); font-weight:800; line-height:1.35; letter-spacing:-0.01em;
+  color:var(--c-ink);
+}
+.contents_div .ktx-sec--intro .ktx-h2{ margin:17px 0 20px; }
+.contents_div .ktx-sec--s1 .ktx-h2,
+.contents_div .ktx-sec--s4 .ktx-h2{ color:#fff; }
+.contents_div .ktx-lead{
+  margin-top:16px; font-size:var(--fs-lead); line-height:1.6; color:var(--c-sub);
+}
+.contents_div .ktx-sec--s1 .ktx-lead,
+.contents_div .ktx-sec--s4 .ktx-lead{ color:rgba(255,255,255,.5); }
+.contents_div .ktx-lead strong{ font-weight:700; color:var(--c-ink); }
+.contents_div .ktx-sec--s1 .ktx-lead strong,
+.contents_div .ktx-sec--s4 .ktx-lead strong{ color:var(--c-acc-lt); }
+
+/* 섹션 배경색(--c-mid) 아웃글로우 — 배경 사진 위 가독성 (이용객 증가) */
+.contents_div .ktx-sec--s3 .ktx-kicker,
+.contents_div .ktx-sec--s3 .ktx-h2{
+  text-shadow:0 0 2px var(--c-mid), 0 0 5px var(--c-mid), 0 0 10px rgba(226,232,245,.95), 0 0 18px rgba(226,232,245,.85), 0 0 28px rgba(226,232,245,.6);
+}
+
+.contents_div .ktx-sec--s3 .ktx-kicker,
+.contents_div .ktx-sec--s3 .ktx-kicker-num{ font-weight:900; }
+.contents_div .ktx-sec--s3 .ktx-lead{ font-weight:500; }
+/* 리드문 형광펜 (흰색 50%, 글자 세로 중앙) */
+.contents_div .ktx-mark{
+  padding:0 var(--mark-px);
+  background:linear-gradient(to bottom, transparent calc(16% - 2px), rgba(255,255,255,.5) calc(16% - 2px), rgba(255,255,255,.5) calc(84% + 2px), transparent calc(84% + 2px));
+  -webkit-box-decoration-break:clone; box-decoration-break:clone;
+}
+
+/* 말풍선 숫자 롤링 (주요 역 증편 h2) — 1→9 굴러간 뒤 ?로 멈춤. 숫자는 CSS로만 그려 본문 텍스트에 섞이지 않게 */
+.contents_div .ktx-bub{
+  position:relative; display:inline-flex; align-items:center; justify-content:center;
+  margin:0 .14em 0 .16em; padding:.16em .36em; vertical-align:.36em;
+  border-radius:.32em; background:var(--c-acc); color:#fff;
+  font-family:'Pretendard',sans-serif; font-size:.68em; font-weight:800; line-height:1; letter-spacing:0;
+}
+.contents_div .ktx-bub::after{
+  content:''; position:absolute; left:.28em; bottom:-.34em; width:.36em; height:.38em;
+  background:var(--c-acc);   /* 꼬리 끝 살짝 둥글게 */
+  -webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10'%3E%3Cpolygon points='1,0 10,0 1,8.6' fill='%23000' stroke='%23000' stroke-width='2' stroke-linejoin='round'/%3E%3C/svg%3E") 0 0 / 100% 100% no-repeat;
+          mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10'%3E%3Cpolygon points='1,0 10,0 1,8.6' fill='%23000' stroke='%23000' stroke-width='2' stroke-linejoin='round'/%3E%3C/svg%3E") 0 0 / 100% 100% no-repeat;
+}
+.contents_div .ktx-bub-win{ display:block; width:.66em; height:1em; overflow:hidden; text-align:center; }
+.contents_div .ktx-bub-roll{
+  display:block; transform:translateY(calc(-9em + var(--bub-q-y)));
+  transition:transform 1.8s cubic-bezier(.2,.75,.25,1);
+}
+.contents_div .ktx-bub-roll::before{
+  content:'1\A 2\A 3\A 4\A 5\A 6\A 7\A 8\A 9\A ?'; display:block; white-space:pre; line-height:1;
+}
+.contents_div .ktx-bub-roll.is-wait{ transform:translateY(0); transition:none; }
+
+/* ===== 표 ===== */
+.contents_div .ktx-tbl{
+  width:100%; margin-top:32px; border-collapse:collapse; border-top:2px solid var(--c-main);
+  font-size:var(--fs-body); line-height:1.5;
+}
+.contents_div .ktx-tbl thead th{
+  padding:13px 8px; font-size:var(--fs-info); font-weight:600; color:var(--c-sub);
+  text-align:center; border-bottom:1px solid var(--c-line);
+}
+.contents_div .ktx-tbl tbody th{
+  padding:17px 8px; text-align:center; font-weight:700; color:var(--c-ink); white-space:nowrap;
+}
+.contents_div .ktx-tbl td{ padding:17px 8px; text-align:center; color:var(--c-ink); }
+.contents_div .ktx-tbl tbody tr{ border-bottom:1px solid var(--c-line); }
+.contents_div .ktx-tbl :is(th,td) + :is(th,td){ border-left:1px solid var(--c-line); }
+.contents_div .ktx-arr{ color:var(--c-sub); margin:0 4px; }
+.contents_div .ktx-up{ font-weight:700; color:var(--c-acc); }
+.contents_div .ktx-pct{
+  display:inline-flex; align-items:center; height:var(--lb-h); padding:0 var(--lb-px); margin-left:6px;
+  border-radius:999px; background:var(--c-acc); color:#fff;
+  font-size:var(--fs-label); font-weight:var(--fw-label); line-height:1; vertical-align:1px;
+}
+.contents_div .ktx-tbl .ktx-hl{ background:rgba(29,82,196,.08); }
+.contents_div .ktx-tbl .ktx-hl th{ color:var(--c-acc); }
+
+/* 어두운 배경 표 */
+.contents_div .ktx-sec--s1 .ktx-tbl{ border-top-color:rgba(255,255,255,.7); }
+.contents_div .ktx-sec--s1 .ktx-tbl thead th{ color:rgba(255,255,255,.92); border-bottom-color:rgba(255,255,255,.2); background:rgba(8,22,60,.2); }
+.contents_div .ktx-sec--s1 .ktx-tbl tbody tr{ border-bottom-color:rgba(255,255,255,.2); }
+.contents_div .ktx-sec--s1 .ktx-tbl :is(th,td) + :is(th,td){ border-left-color:rgba(255,255,255,.2); }
+.contents_div .ktx-sec--s1 .ktx-tbl tbody th,
+.contents_div .ktx-sec--s1 .ktx-tbl td{ color:#fff; }
+.contents_div .ktx-sec--s1 .ktx-arr{ color:rgba(255,255,255,.55); }
+.contents_div .ktx-sec--s1 .ktx-up{ color:var(--c-acc-lt); }
+.contents_div .ktx-seat{ font-size:var(--fs-h3); font-weight:800; color:var(--c-acc-lt); }
+
+.contents_div .ktx-note{
+  margin-top:14px; font-size:var(--fs-hash); line-height:1.35; color:var(--c-sub); text-align:right;
+}
+
+/* 결론 문단 */
+.contents_div .ktx-concl{
+  margin-top:40px; text-align:center;
+  font-size:var(--fs-lead); font-weight:600; line-height:1.6; color:var(--c-ink);
+}
+.contents_div .ktx-concl::before{
+  content:''; display:block; width:32px; height:3px; margin:0 auto 18px; background:var(--c-main);
+}
+
+/* 마무리 */
+.contents_div .ktx-closing{
+  position:relative; margin-top:36px; padding:var(--card-py) var(--card-px);
+  border:1px solid rgba(175,255,94,.35); border-radius:16px;
+  background:rgba(255,255,255,.05);
+  font-size:var(--fs-h3); font-weight:700; line-height:1.5; color:var(--c-acc-lt);
+}
+.contents_div .ktx-closing::before{
+  content:''; display:block; width:32px; height:3px; margin:0 auto 16px;
+  border-radius:2px; background:var(--c-acc-lt);
+}
+
+/* ===== 푸터 ===== */
+.contents_div .ktx-foot{ width:100%; padding:50px var(--gut); background:var(--c-foot); border-top:1px solid rgba(255,255,255,.06); }
+.contents_div .ktx-tags{ display:flex; flex-wrap:wrap; justify-content:center; gap:8px; }
+.contents_div .ktx-tags li{
+  display:inline-flex; align-items:center; height:var(--lb-h); padding:0 var(--lb-px);
+  border:1px solid rgba(255,255,255,.18); border-radius:999px; background:rgba(255,255,255,.04);
+  font-size:var(--fs-tagcap); font-weight:700; line-height:1.25; color:rgba(255,255,255,.66);
+}
+
+/* ===== 반응형 ===== */
+@media (hover:hover) and (pointer:fine){
+  .contents_div .ktx-nav-btn:hover{ color:#fff; }
+  .contents_div .ktx-nav-btn:hover span::after{ transform:scaleX(1); }
+}
+@media (max-width:600px){
+  .contents_div .ktx-wrap{
+    --fs-foot:clamp(18px, calc(18px + (100vw - 375px) * 0.0857), 21px);
+    --fs-h3:clamp(16px, calc(16px + (100vw - 375px) * 0.0286), 17px);
+    --fs-body:clamp(13.5px, calc(13.5px + (100vw - 375px) * 0.0143), 14px);
+    --fs-lead:var(--fs-body); --fs-info:var(--fs-body); --fs-cta:var(--fs-body);
+    --fs-arrow:15px; --fs-nav:12px; --fs-kicker:11.5px; --fs-num:10px; --fs-tagcap:10px;
+    --fs-label:10px; --fw-label:400; --fs-check:10px; --fs-caption:10px;
+    --fs-hash:clamp(10.5px, calc(10.5px + (100vw - 375px) * 0.0143), 11px);
+    --gut:22px;
+    --card-py:22px; --card-px:17px;
+    --kick:22px; --rv-y:16px; --bub-q-y:0px; --mark-px:2px; --kick-gap:7px; --kick-slash:10px; --lb-h:21px; --lb-px:9px;
+    --img-ratio:75%; --logo-h:10px;
+  }
+  .contents_div .ktx-br--web{ display:none; }
+  .contents_div .ktx-br--mo,
+  .contents_div .ktx-br--mo-wide{ display:inline; }
+
+  .contents_div .ktx-nav ul{ height:52px; }
+  .contents_div .ktx-nav li + li::before{ height:11px; margin-top:-5.5px; }
+  .contents_div .ktx-nav-btn{ min-height:48px; line-height:1.35; }
+  .contents_div .ktx-nav-btn span{ padding:3px 0; }
+
+  .contents_div .ktx-h2{ line-height:1.4; }
+  .contents_div .ktx-sec--intro .ktx-h2{ margin:13px 0 15px; }  .contents_div .ktx-ticker{ margin-bottom:22px; }
+  .contents_div .ktx-ticker-list li{ padding-right:18px; }
+  .contents_div .ktx-ticker-list li::before{ width:4px; height:4px; margin-right:7px; }
+  .contents_div .ktx-ticker-list li.ktx-ticker-logo{ gap:5px; }
+  .contents_div .ktx-sec--intro .ktx-lead{ padding-inline:clamp(0px, calc((100vw - 462px) * 0.2), 28px); }
+
+  .contents_div .ktx-sec--full > .ktx-sec-bg{ width:120%; margin-left:-10%; }   /* 1.2배, 가운데 기준 */
+
+  /* 표 → 행 블록 */
+  .contents_div .ktx-tbl{ margin-top:24px; }
+  .contents_div .ktx-tbl thead{
+    position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap;
+  }
+  .contents_div .ktx-tbl tbody,
+  .contents_div .ktx-tbl tr{ display:block; width:100%; }
+  .contents_div .ktx-tbl tbody tr{ padding:14px 4px 12px; }
+  .contents_div .ktx-tbl tbody th{
+    display:block; padding:0 0 6px; text-align:left; font-size:var(--fs-h3); line-height:1.45;
+  }
+  .contents_div .ktx-tbl td{
+    display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; column-gap:10px;
+    padding:4px 0; text-align:right;
+  }
+  .contents_div .ktx-tbl :is(th,td) + :is(th,td){ border-left:0; }
+  .contents_div .ktx-tbl td::before{
+    content:attr(data-label); flex:0 0 auto; text-align:left; color:var(--c-sub); font-weight:400;
+  }
+  .contents_div .ktx-sec--s1 .ktx-tbl td::before{ color:rgba(255,255,255,.85); }
+  .contents_div .ktx-tbl td > span.ktx-val{ margin-left:auto; }
+  .contents_div .ktx-tbl tr.ktx-hl{ padding-left:10px; padding-right:10px; }
+  .contents_div .ktx-seat{ font-size:var(--fs-body); }
+  .contents_div .ktx-pct{ margin-left:5px; }
+
+  .contents_div .ktx-concl{ margin-top:32px; }
+  .contents_div .ktx-concl::before{ margin-bottom:14px; }
+  .contents_div .ktx-closing{ margin-top:28px; border-radius:12px; }
+  .contents_div .ktx-closing::before{ width:24px; margin-bottom:12px; }
+
+  .contents_div .ktx-foot{ padding-top:40px; padding-bottom:40px; }
+
+  /* 모바일 태그: 캡슐 없이 텍스트만 */
+  .contents_div .ktx-tags{ gap:4px 12px; }
+  .contents_div .ktx-tags li{
+    height:auto; padding:0; border:0; border-radius:0; background:none;
+    font-size:var(--fs-hash); font-weight:400; line-height:1.35;
+  }
+}
+@media (max-width:480px){
+  .contents_div .ktx-wrap{
+    --fs-nav:clamp(11.5px, calc(11.5px + (100vw - 375px) * 0.0286), 12.5px);
+    --gut:15px;
+  }
+  .contents_div .ktx-nav-btn{ min-height:44px; }
+}
+@media (max-width:420px){
+  .contents_div .ktx-wrap{
+    --band:40px;
+    --card-py:19px; --card-px:14px;
+  }
+  .contents_div .ktx-br--mo-wide{ display:none; }
+  .contents_div .ktx-br--m420{ display:inline; }
+}
+@media (prefers-reduced-motion:reduce){
+  .contents_div .ktx-bub-roll{ transition:none; }
+  .contents_div .ktx-hero.is-ready .ktx-fig img,
+  .contents_div .ktx-hero.is-ready .ktx-hero-sub,
+  .contents_div .ktx-hero.is-ready .ktx-hero-title,
+  .contents_div .ktx-rv{ opacity:1; transform:none; clip-path:none; transition:none; }
+  .contents_div .ktx-ticker-track{ animation:none; }
+}
+</style>
+
+<article class="ktx-wrap">
+
+  <!-- 히어로 -->
+  <section class="ktx-hero">
+    <div class="ktx-fig">
+      <img src="img/히어로.webp" alt="선로 위를 달리는 KTX 고속열차" fetchpriority="high" loading="eager" decoding="async">
+    </div>
+    <div class="ktx-hero-txt">
+      <p class="ktx-hero-sub">전남광주 주요 역 이용객 얼마나 늘었을까?</p>
+      <h1 class="ktx-hero-title">KTX·SRT 통합 두 달,<br>호남선에 생긴 일</h1>
+    </div>
+  </section>
+  <script>
+  (function(){
+    var cs = document.currentScript, h = cs && cs.previousElementSibling;
+    if(!h || !window.IntersectionObserver) return;
+    if(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    h.classList.add('is-ready');
+  })();
+  </script>
+
+  <!-- 앵커 내비 -->
+  <nav class="ktx-nav" aria-label="본문 바로가기">
+    <ul>
+      <li><button type="button" class="ktx-nav-btn" data-go="ktx-s1"><span>운행 확대</span></button></li>
+      <li><button type="button" class="ktx-nav-btn" data-go="ktx-s2"><span>주요 역 증편</span></button></li>
+      <li><button type="button" class="ktx-nav-btn" data-go="ktx-s3"><span>이용객 증가</span></button></li>
+      <li><button type="button" class="ktx-nav-btn" data-go="ktx-s4"><span>앞으로</span></button></li>
+    </ul>
+  </nav>
+
+  <!-- 인트로 -->
+  <section class="ktx-sec ktx-sec--intro">
+    <div class="ktx-group">
+      <div class="ktx-ticker" aria-label="주요 소식">
+        <div class="ktx-ticker-track">
+          <ul class="ktx-ticker-list"><li class="ktx-ticker-logo"><img src="img/logo-ktx.webp" alt="KTX"><span class="ktx-ticker-x" aria-hidden="true">×</span><img src="img/logo-srt.webp" alt="SRT"></li><li>KTX와 SRT 고속철도 통합</li><li>호남선·전라선 열차 증편</li><li>호남선 하루 최대 4,822석</li><li>전라선 하루 최대 2,511석</li><li>목포역 이용객 21.9% 증가</li></ul>
+          <ul class="ktx-ticker-list ktx-ticker-dup" aria-hidden="true"><li class="ktx-ticker-logo"><img src="img/logo-ktx.webp" alt=""><span class="ktx-ticker-x" aria-hidden="true">×</span><img src="img/logo-srt.webp" alt=""></li><li>KTX와 SRT 고속철도 통합</li><li>호남선·전라선 열차 증편</li><li>호남선 하루 최대 4,822석</li><li>전라선 하루 최대 2,511석</li><li>목포역 이용객 21.9% 증가</li></ul>
+        </div>
+      </div>
+      <h2 class="ktx-h2">기차표, 구하기 쉬워지고 있어요</h2>
+      <p class="ktx-lead">지난 9월 KTX와 SRT 고속철도가 통합되면서 <span class="ktx-nw">호남선·전라선에</span> 열차가 늘었어요.<span class="ktx-br ktx-br--web"></span> 그 결과 9~10월 두 달간 전남광주 주요 역의 열차 이용객이 전년보다 늘었다고 하는데요.<span class="ktx-br ktx-br--web"></span> 어떤 변화가 있었는지 알아볼까요?</p>
+    </div>
+  </section>
+
+  <!-- 1. 운행 확대 -->
+  <section class="ktx-sec ktx-sec--s1 ktx-sec--full" id="ktx-s1" tabindex="-1">
+    <img class="ktx-sec-bg" src="img/sec1-bg.webp" alt="" loading="lazy" decoding="async">
+    <div class="ktx-sec-in"><div class="ktx-group">
+      <span class="ktx-kicker"><span class="ktx-kicker-num" aria-hidden="true">01</span>운행 확대</span>
+      <h2 class="ktx-h2">통합 후 하루 운행 횟수가<br>얼마나 늘었을까?</h2>
+      <p class="ktx-lead">호남선은 하루 최대 <strong>4,822석</strong>, 전라선은 <strong>2,511석</strong>이 늘어났습니다.</p>
+
+      <table class="ktx-tbl">
+        <thead>
+          <tr><th scope="col">노선</th><th scope="col">주중</th><th scope="col">주말</th><th scope="col">추가 좌석(하루 최대)</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">호남선</th>
+            <td data-label="주중"><span class="ktx-val">95회<span class="ktx-arr">→</span><span class="ktx-up">100회</span></span></td>
+            <td data-label="주말"><span class="ktx-val">96회<span class="ktx-arr">→</span><span class="ktx-up">100회</span></span></td>
+            <td data-label="추가 좌석(하루 최대)"><span class="ktx-val ktx-seat">4,822석</span></td>
+          </tr>
+          <tr>
+            <th scope="row">전라선</th>
+            <td data-label="주중"><span class="ktx-val">40회<span class="ktx-arr">→</span><span class="ktx-up">45회</span></span></td>
+            <td data-label="주말"><span class="ktx-val">45회<span class="ktx-arr">→</span><span class="ktx-up">54회</span></span></td>
+            <td data-label="추가 좌석(하루 최대)"><span class="ktx-val ktx-seat">2,511석</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div></div>
+  </section>
+
+  <!-- 2. 주요 역 증편 -->
+  <section class="ktx-sec ktx-sec--s2" id="ktx-s2" tabindex="-1">
+    <div class="ktx-group">
+      <span class="ktx-kicker"><span class="ktx-kicker-num" aria-hidden="true">02</span>주요 역 증편</span>
+      <h2 class="ktx-h2">전남광주 주요 역은<br>몇 회<span class="ktx-bub" aria-hidden="true"><span class="ktx-bub-win"><span class="ktx-bub-roll"></span></span></span> 늘었을까요?</h2>
+      <p class="ktx-lead">광주송정역은 6~7회, 순천역과 여수엑스포역은 7~9회 등 운행이 확대됐어요.</p>
+
+      <table class="ktx-tbl">
+        <thead>
+          <tr><th scope="col">역</th><th scope="col">주중</th><th scope="col">주말</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">광주송정</th>
+            <td data-label="주중"><span class="ktx-val">89회<span class="ktx-arr">→</span>96회 <span class="ktx-up">+7회</span></span></td>
+            <td data-label="주말"><span class="ktx-val">90회<span class="ktx-arr">→</span>96회 <span class="ktx-up">+6회</span></span></td>
+          </tr>
+          <tr>
+            <th scope="row">순천·여수엑스포</th>
+            <td data-label="주중"><span class="ktx-val">36회<span class="ktx-arr">→</span>43회 <span class="ktx-up">+7회</span></span></td>
+            <td data-label="주말"><span class="ktx-val">39회<span class="ktx-arr">→</span>48회 <span class="ktx-up">+9회</span></span></td>
+          </tr>
+          <tr>
+            <th scope="row">목포</th>
+            <td data-label="주중"><span class="ktx-val"><span class="ktx-up">+2회</span></span></td>
+            <td data-label="주말"><span class="ktx-val"><span class="ktx-up">+2회</span></span></td>
+          </tr>
+          <tr>
+            <th scope="row">나주</th>
+            <td data-label="주중"><span class="ktx-val"><span class="ktx-up">+1회</span></span></td>
+            <td data-label="주말"><span class="ktx-val"><span class="ktx-up">+1회</span></span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- 3. 이용객 증가 -->
+  <section class="ktx-sec ktx-sec--s3 ktx-sec--full" id="ktx-s3" tabindex="-1">
+    <img class="ktx-sec-bg" src="img/sec3-bg.webp" alt="" loading="lazy" decoding="async">
+    <div class="ktx-sec-in"><div class="ktx-group">
+      <span class="ktx-kicker"><span class="ktx-kicker-num" aria-hidden="true">03</span>이용객 증가</span>
+      <h2 class="ktx-h2">늘어난 열차만큼<br>이용객도 늘었습니다</h2>
+      <p class="ktx-lead"><span class="ktx-mark">호남선에서는 호남권 최대 거점 역인 광주송정역 이용객이 <strong>6.3%</strong> 증가했어요.<span class="ktx-br ktx-br--web"></span> 목포역은 같은 기간 50만 765명이 이용해 무려 <strong>21.9%</strong> 증가율을 보이며<span class="ktx-br ktx-br--web"></span> 전남광주 역사 중 가장 높은 증가율을 기록했답니다.</span></p>
+
+      <table class="ktx-tbl">
+        <thead>
+          <tr><th scope="col">역 이름</th><th scope="col">9~10월 이용객 수</th><th scope="col">전년 대비 증가 인원</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">광주송정역</th>
+            <td data-label="9~10월 이용객 수"><span class="ktx-val">약 160만 명</span></td>
+            <td data-label="전년 대비 증가 인원"><span class="ktx-val">+9만 4,903명<span class="ktx-pct">+6.3%</span></span></td>
+          </tr>
+          <tr>
+            <th scope="row">순천역</th>
+            <td data-label="9~10월 이용객 수"><span class="ktx-val">약 52만 5천 명</span></td>
+            <td data-label="전년 대비 증가 인원"><span class="ktx-val">+4만 8,671명<span class="ktx-pct">+10.2%</span></span></td>
+          </tr>
+          <tr class="ktx-hl">
+            <th scope="row">목포역</th>
+            <td data-label="9~10월 이용객 수"><span class="ktx-val">약 50만 명</span></td>
+            <td data-label="전년 대비 증가 인원"><span class="ktx-val">+8만 9,905명<span class="ktx-pct">+21.9%</span></span></td>
+          </tr>
+          <tr>
+            <th scope="row">여수엑스포역</th>
+            <td data-label="9~10월 이용객 수"><span class="ktx-val">약 26만 1천 명</span></td>
+            <td data-label="전년 대비 증가 인원"><span class="ktx-val">+1만 9,724명<span class="ktx-pct">+8.1%</span></span></td>
+          </tr>
+          <tr>
+            <th scope="row">나주역</th>
+            <td data-label="9~10월 이용객 수"><span class="ktx-val">약 22만 7천 명</span></td>
+            <td data-label="전년 대비 증가 인원"><span class="ktx-val">+8,117명<span class="ktx-pct">+3.7%</span></span></td>
+          </tr>
+        </tbody>
+      </table>
+      <p class="ktx-note">※ 새마을호, 무궁화호 등 일반 열차 이용객 모두 포함</p>
+
+      <p class="ktx-concl">이번 결과는 단순한 수치 증가를 넘어 그동안 표가 없어 발을 동동 굴렀던<span class="ktx-br ktx-br--web"></span> 시민들의 이동권이 한층 넓어졌다는 점에서 의미가 큽니다.</p>
+    </div></div>
+  </section>
+
+  <!-- 4. 앞으로 -->
+  <section class="ktx-sec ktx-sec--s4" id="ktx-s4" tabindex="-1">
+    <div class="ktx-group">
+      <span class="ktx-kicker"><span class="ktx-kicker-num" aria-hidden="true">04</span>앞으로</span>
+      <h2 class="ktx-h2">여기서 끝이 아닌데요</h2>
+      <p class="ktx-lead">전남광주통합특별시는 <strong>2028년 말</strong> 평택~오송 2복선화 개통과<span class="ktx-br ktx-br--web"></span> 변전소 개량 시점에 맞춰 새로 늘어나는 고속 열차 물량이<span class="ktx-br ktx-br--web"></span> 호남선과 전라선에 우선 배정될 수 있도록 적극 추진할 예정이에요.</p>
+      <p class="ktx-closing">기차표 예매가 수월해진 지금<br>기차를 타고 멋진 가을 여행을 떠나보면 어떨까요?</p>
+    </div>
+  </section>
+
+  <!-- 푸터 -->
+  <footer class="ktx-foot">
+    <ul class="ktx-tags">
+      <li>#KTX·SRT통합</li>
+      <li>#고속철도통합</li>
+      <li>#호남선</li>
+      <li>#전남광주소식</li>
+      <li>#광주송정역</li>
+      <li>#목포역</li>
+      <li>#순천역</li>
+      <li>#여수엑스포역</li>
+      <li>#나주역</li>
+      <li>#전남광주통합특별시</li>
+    </ul>
+  </footer>
+
+</article>
+
+<script>
+(function(){
+  var cs = document.currentScript;
+  var root = (cs && cs.closest) ? cs.closest('.contents_div') : null;
+  if(!root) root = document.querySelector('.contents_div');
+  if(!root) return;
+  var btns = root.querySelectorAll('.ktx-nav-btn');
+  var secs = [];
+
+  btns.forEach(function(btn){
+    var sec = root.querySelector('#' + btn.getAttribute('data-go'));
+    if(!sec) return;
+    secs.push({ btn:btn, sec:sec });
+    btn.addEventListener('click', function(){
+      sec.scrollIntoView({ behavior:'smooth', block:'start' });
+      try{ sec.focus({ preventScroll:true }); }catch(e){}
+    });
+  });
+
+  if(!window.IntersectionObserver || !secs.length) return;
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(en){
+      if(!en.isIntersecting) return;
+      secs.forEach(function(it){
+        it.btn.classList.toggle('is-on', it.sec === en.target);
+      });
+    });
+  }, { rootMargin:'-45% 0px -50% 0px' });
+  secs.forEach(function(it){ io.observe(it.sec); });
+})();
+</script>
+
+<script>
+(function(){
+  var cs = document.currentScript;
+  var root = (cs && cs.closest) ? cs.closest('.contents_div') : null;
+  if(!root) root = document.querySelector('.contents_div');
+  if(!root || !window.IntersectionObserver) return;
+  var bubs = root.querySelectorAll('.ktx-bub');
+  if(!bubs.length) return;
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(en){
+      if(!en.isIntersecting) return;
+      var r = en.target.querySelector('.ktx-bub-roll');
+      if(r) r.classList.remove('is-wait');
+      io.unobserve(en.target);
+    });
+  }, { threshold:1 });
+  bubs.forEach(function(b){
+    var r = b.querySelector('.ktx-bub-roll');
+    if(!r) return;
+    r.classList.add('is-wait');
+    io.observe(b);
+  });
+})();
+</script>
+
+<script>
+(function(){
+  var cs = document.currentScript;
+  var root = (cs && cs.closest) ? cs.closest('.contents_div') : null;
+  if(!root) root = document.querySelector('.contents_div');
+  if(!root || !window.IntersectionObserver) return;
+  if(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+  /* 히어로 — 30% 보이면 재생 */
+  var hero = root.querySelector('.ktx-hero.is-ready');
+  if(hero){
+    var hio = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if(!en.isIntersecting) return;
+        requestAnimationFrame(function(){ hero.classList.add('is-in'); });
+        hio.unobserve(hero);
+      });
+    }, { threshold:.3 });
+    hio.observe(hero);
+  }
+
+  /* 내비 아래 — 섹션 안 요소가 차례로 떠오름 */
+  var items = [];
+  root.querySelectorAll('.ktx-sec .ktx-group').forEach(function(g){
+    var kids = g.children;
+    for(var i = 0; i < kids.length; i++){
+      kids[i].classList.add('ktx-rv');
+      kids[i].style.transitionDelay = Math.min(i * 90, 360) + 'ms';
+      items.push(kids[i]);
+    }
+  });
+  var tags = root.querySelector('.ktx-foot .ktx-tags');
+  if(tags){ tags.classList.add('ktx-rv'); items.push(tags); }
+
+  function show(el){ el.classList.add('is-in'); }
+  var rio = new IntersectionObserver(function(entries){
+    entries.forEach(function(en){
+      if(!en.isIntersecting) return;
+      show(en.target);
+      rio.unobserve(en.target);
+    });
+  }, { rootMargin:'0px 0px -10% 0px' });
+  items.forEach(function(el){ if(el !== tags) rio.observe(el); });
+
+  /* 안전장치 — 푸터는 여백 없이 따로 보고, 닿으면 남은 요소를 모두 표시 */
+  var foot = root.querySelector('.ktx-foot');
+  if(foot){
+    var fio = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if(!en.isIntersecting) return;
+        items.forEach(show);
+        fio.disconnect();
+      });
+    });
+    fio.observe(foot);
+  }
+})();
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "통합 후 하루 운행 횟수가 얼마나 늘었을까?",
+      "acceptedAnswer": { "@type": "Answer", "text": "호남선은 하루 최대 4,822석, 전라선은 2,511석이 늘어났습니다." }
+    },
+    {
+      "@type": "Question",
+      "name": "전남광주 주요 역은 몇 회 늘었을까요?",
+      "acceptedAnswer": { "@type": "Answer", "text": "광주송정역은 6~7회, 순천역과 여수엑스포역은 7~9회 등 운행이 확대됐어요." }
+    }
+  ]
+}
+</script>
+</div>
