@@ -44,7 +44,7 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
 .contents_div .ktx-wrap{
   max-width:800px; margin:0 auto; container-type:inline-size;
   /* Title */
-  --fs-h2:clamp(22px, min(25px + (100cqi - 388px) * 0.02185, 24px + (100cqi - 343px) * 0.02223, 22px + (100cqi - 318px) * 0.08), 28px);   /* 웹 32→28(-4), 모바일 +2 (350:22 · 375:24 · 420:25), 약 560 이상은 28 고정 — 넓은 화면이 더 작아지는 역전 방지 */ --fs-foot:31px; --fs-h3:21px;
+  --fs-h2:clamp(22px, min(25px + (100cqi - 388px) * 0.02185, 24px + (100cqi - 343px) * 0.02223, 22px + (100cqi - 318px) * 0.08, 28px) + max(0px, (100cqi - 568px) * 0.02155), 33px);   /* 웹 800:33 (601→800 사이 28→33), 모바일 그대로 (350:22 · 375:24 · 420:25 · 약 560~600:28) */
   /* Body */
   --fs-body:17px; --fs-lead:16px; --fs-info:16px; --fs-cta:16px; --fs-arrow:17px;
   --fs-nav:16px; --fs-kicker:15px; --fs-num:14px; --fs-tagcap:13.5px;
