@@ -53,10 +53,10 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
   --gut:clamp(22px, 6.25%, 50px);
   --band:clamp(40px, calc(7.9% + 6.8px), 70px);
   --card-py:30px; --card-px:28px;
-  --kick:32px; --rv-y:24px; --bub-q-y:1px; --mark-px:3px; --kick-gap:9px; --kick-slash:13px; --lb-h:24px; --lb-px:11px;
+  --kick:36px; --rv-y:24px; --bub-q-y:1px; --mark-px:3px; --kick-gap:9px; --kick-slash:13px; --lb-h:24px; --lb-px:11px;
   --img-ratio:62.5%; --hero-ratio:98.75%;
   /* 히어로 텍스트: 원본 1600 기준 px ÷ 16 = cqi (좌 119 · 바닥 133 · 타이틀 128 · 서브 55) */
-  --hero-x:7.4375cqi; --hero-y:8.3125cqi; --hero-title:8cqi; --hero-sub:max(10px, 3.4375cqi); --logo-h:14px;   /* 히어로 원본 1600×1580 — 글자 잘림 방지 */
+  --hero-x:7.4375cqi; --hero-y:8.3125cqi; --hero-title:8cqi; --hero-sub:max(10px, 3.4375cqi);   /* 히어로 원본 1600×1580 — 글자 잘림 방지 */
   /* 색 */
   /* 히어로: KTX 블루 + 네온 그린 */
   --c-main:#1a4cb0; --c-main-dk:#0e2b6e;
@@ -182,7 +182,8 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
   display:flex; align-items:center; height:100%; width:max-content;
   animation:ktx-tick 30s linear infinite;
 }
-.contents_div .ktx-ticker:hover .ktx-ticker-track{ animation-play-state:paused; }
+.contents_div .ktx-ticker:hover .ktx-ticker-track,
+.contents_div .ktx-ticker.is-off .ktx-ticker-track{ animation-play-state:paused; }
 .contents_div .ktx-ticker-list{ display:flex; align-items:center; flex:0 0 auto; }
 .contents_div .ktx-ticker-list li{
   display:inline-flex; align-items:center; flex:0 0 auto; padding-right:26px;
@@ -193,10 +194,6 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
   content:''; flex:0 0 auto; width:5px; height:5px; margin-right:10px;
   border-radius:50%; background:var(--c-acc);
 }
-.contents_div .ktx-ticker-list li.ktx-ticker-logo{ gap:7px; }
-.contents_div .ktx-ticker-list li.ktx-ticker-logo::before{ content:none; }
-.contents_div .ktx-ticker-logo img{ display:block; width:auto; height:var(--logo-h); }
-.contents_div .ktx-ticker-x{ color:var(--c-sub); font-weight:500; }
 @keyframes ktx-tick{ from{ transform:translateX(0); } to{ transform:translateX(-50%); } }
 .contents_div .ktx-sec--s1{ background:var(--c-s1); color:#fff; }
 /* 전체화면 배경 섹션 (01 9장) — 사진 맨 위·폭 꽉, 하단 150px 페이드 */
@@ -205,11 +202,16 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
 .contents_div .ktx-sec--full > .ktx-sec-in{ grid-area:1 / 1; min-width:0; }
 .contents_div .ktx-sec--full > .ktx-sec-bg{
   position:relative; z-index:-1; align-self:start; justify-self:start;
-  display:block; width:100%; max-width:none; height:auto; margin:0;
+  display:block; width:100%; margin:0;
   pointer-events:none; user-select:none;
-  -webkit-mask-image:linear-gradient(to bottom, #000 calc(100% - 150px), transparent 100%);
-          mask-image:linear-gradient(to bottom, #000 calc(100% - 150px), transparent 100%);
 }
+.contents_div .ktx-sec-bg img{ display:block; width:100%; max-width:none; height:auto; }
+.contents_div .ktx-sec-bg::after{
+  content:''; position:absolute; left:0; right:0; bottom:0; height:150px;
+  background:linear-gradient(to bottom, transparent, var(--sec-bg));
+}
+.contents_div #ktx-s1{ --sec-bg:var(--c-s1); }
+.contents_div #ktx-s3{ --sec-bg:var(--c-mid); }
 .contents_div .ktx-sec--full > .ktx-sec-in{ padding:var(--band) var(--gut); }
 .contents_div .ktx-sec--s2{ background:var(--c-gray); }
 .contents_div .ktx-sec--s3{ background:var(--c-mid); }
@@ -277,7 +279,7 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
   -webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10'%3E%3Cpolygon points='1,0 10,0 1,8.6' fill='%23000' stroke='%23000' stroke-width='2' stroke-linejoin='round'/%3E%3C/svg%3E") 0 0 / 100% 100% no-repeat;
           mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10'%3E%3Cpolygon points='1,0 10,0 1,8.6' fill='%23000' stroke='%23000' stroke-width='2' stroke-linejoin='round'/%3E%3C/svg%3E") 0 0 / 100% 100% no-repeat;
 }
-.contents_div .ktx-bub-win{ display:block; width:.66em; height:1em; overflow:hidden; text-align:center; }
+.contents_div .ktx-bub-win{ display:block; width:.66em; height:1em; overflow:hidden; text-align:center; clip-path:inset(0); -webkit-transform:translateZ(0); transform:translateZ(0); }
 .contents_div .ktx-bub-roll{
   display:block; transform:translateY(calc(-9em + var(--bub-q-y)));
   transition:transform 1.8s cubic-bezier(.2,.75,.25,1);
@@ -369,8 +371,8 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
     --fs-hash:clamp(10.5px, calc(10.5px + (100vw - 375px) * 0.0143), 11px);
     --gut:22px;
     --card-py:22px; --card-px:17px;
-    --kick:22px; --rv-y:16px; --bub-q-y:0px; --mark-px:2px; --kick-gap:7px; --kick-slash:10px; --lb-h:21px; --lb-px:9px;
-    --img-ratio:75%; --logo-h:10px;
+    --kick:27px; --rv-y:16px; --bub-q-y:0px; --mark-px:2px; --kick-gap:7px; --kick-slash:10px; --lb-h:21px; --lb-px:9px;
+    --img-ratio:75%;
   }
   .contents_div .ktx-br--web{ display:none; }
   .contents_div .ktx-br--mo,
@@ -385,7 +387,6 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
   .contents_div .ktx-sec--intro .ktx-h2{ margin:13px 0 15px; }  .contents_div .ktx-ticker{ margin-bottom:22px; }
   .contents_div .ktx-ticker-list li{ padding-right:18px; }
   .contents_div .ktx-ticker-list li::before{ width:4px; height:4px; margin-right:7px; }
-  .contents_div .ktx-ticker-list li.ktx-ticker-logo{ gap:5px; }
   .contents_div .ktx-sec--intro .ktx-lead{ padding-inline:clamp(0px, calc((100vw - 462px) * 0.2), 28px); }
 
   .contents_div .ktx-sec--full > .ktx-sec-bg{ width:120%; margin-left:-10%; }   /* 1.2배, 가운데 기준 */
@@ -504,8 +505,8 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
     <div class="ktx-group">
       <div class="ktx-ticker" aria-label="주요 소식">
         <div class="ktx-ticker-track">
-          <ul class="ktx-ticker-list"><li class="ktx-ticker-logo"><img src="img/logo-ktx.webp" alt="KTX"><span class="ktx-ticker-x" aria-hidden="true">×</span><img src="img/logo-srt.webp" alt="SRT"></li><li>KTX와 SRT 고속철도 통합</li><li>호남선·전라선 열차 증편</li><li>호남선 하루 최대 4,822석</li><li>전라선 하루 최대 2,511석</li><li>목포역 이용객 21.9% 증가</li></ul>
-          <ul class="ktx-ticker-list ktx-ticker-dup" aria-hidden="true"><li class="ktx-ticker-logo"><img src="img/logo-ktx.webp" alt=""><span class="ktx-ticker-x" aria-hidden="true">×</span><img src="img/logo-srt.webp" alt=""></li><li>KTX와 SRT 고속철도 통합</li><li>호남선·전라선 열차 증편</li><li>호남선 하루 최대 4,822석</li><li>전라선 하루 최대 2,511석</li><li>목포역 이용객 21.9% 증가</li></ul>
+          <ul class="ktx-ticker-list"><li>KTX와 SRT 고속철도 통합</li><li>호남선·전라선 열차 증편</li><li>호남선 하루 최대 4,822석</li><li>전라선 하루 최대 2,511석</li><li>목포역 이용객 21.9% 증가</li></ul>
+          <ul class="ktx-ticker-list ktx-ticker-dup" aria-hidden="true"><li>KTX와 SRT 고속철도 통합</li><li>호남선·전라선 열차 증편</li><li>호남선 하루 최대 4,822석</li><li>전라선 하루 최대 2,511석</li><li>목포역 이용객 21.9% 증가</li></ul>
         </div>
       </div>
       <h2 class="ktx-h2">기차표, 구하기 쉬워지고 있어요</h2>
@@ -515,7 +516,7 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
 
   <!-- 1. 운행 확대 -->
   <section class="ktx-sec ktx-sec--s1 ktx-sec--full" id="ktx-s1" tabindex="-1">
-    <img class="ktx-sec-bg" src="img/sec1-bg.webp" alt="" loading="lazy" decoding="async">
+    <div class="ktx-sec-bg" aria-hidden="true"><img src="img/sec1-bg.webp" alt="" loading="lazy" decoding="async"></div>
     <div class="ktx-sec-in"><div class="ktx-group">
       <span class="ktx-kicker"><span class="ktx-kicker-num" aria-hidden="true">01</span>운행 확대</span>
       <h2 class="ktx-h2">통합 후 하루 운행 횟수가<br>얼마나 늘었을까?</h2>
@@ -582,7 +583,7 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
 
   <!-- 3. 이용객 증가 -->
   <section class="ktx-sec ktx-sec--s3 ktx-sec--full" id="ktx-s3" tabindex="-1">
-    <img class="ktx-sec-bg" src="img/sec3-bg.webp" alt="" loading="lazy" decoding="async">
+    <div class="ktx-sec-bg" aria-hidden="true"><img src="img/sec3-bg.webp" alt="" loading="lazy" decoding="async"></div>
     <div class="ktx-sec-in"><div class="ktx-group">
       <span class="ktx-kicker"><span class="ktx-kicker-num" aria-hidden="true">03</span>이용객 증가</span>
       <h2 class="ktx-h2">늘어난 열차만큼<br>이용객도 늘었습니다</h2>
@@ -725,8 +726,15 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
   for(var r = 0; r < rolls.length; r++) rolls[r].classList.add('is-wait');
 
   function show(el){
-    if(el.classList.contains('is-in')) return;
-    el.classList.add('is-in');
+    if(el.getAttribute('data-rv')) return;
+    el.setAttribute('data-rv', '1');
+    el.style.willChange = 'opacity, transform';
+    requestAnimationFrame(function(){ el.classList.add('is-in'); });
+    el.addEventListener('transitionend', function te(e){
+      if(e.target !== el || e.propertyName !== 'transform') return;
+      el.style.willChange = '';
+      el.removeEventListener('transitionend', te);
+    });
     var wait = el.querySelectorAll('.ktx-bub-roll.is-wait');
     if(!wait.length) return;
     var d = (parseInt(el.style.transitionDelay, 10) || 0) + 400;
@@ -742,6 +750,14 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
     });
   }, { rootMargin:'0px 0px -10% 0px' });
   items.forEach(function(el){ if(el !== tags) rio.observe(el); });
+
+  /* 티커 — 화면 밖이면 애니메이션 정지 */
+  var tk = root.querySelector('.ktx-ticker');
+  if(tk){
+    new IntersectionObserver(function(entries){
+      tk.classList.toggle('is-off', !entries[0].isIntersecting);
+    }).observe(tk);
+  }
 
   /* 안전장치 — 푸터는 여백 없이 따로 보고, 닿으면 남은 요소를 모두 표시 */
   var foot = root.querySelector('.ktx-foot');
