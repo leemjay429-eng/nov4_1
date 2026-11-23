@@ -385,6 +385,10 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
 
   .contents_div .ktx-h2{ line-height:1.4; }
   .contents_div .ktx-sec--intro .ktx-h2{ margin:13px 0 15px; }  .contents_div .ktx-ticker{ margin-bottom:22px; }
+  .contents_div .ktx-ticker{   /* 좌우 흐림 안쪽으로 7px 더 */
+    -webkit-mask-image:linear-gradient(to right, transparent 0, #000 calc(18% + 7px), #000 calc(82% - 7px), transparent 100%);
+            mask-image:linear-gradient(to right, transparent 0, #000 calc(18% + 7px), #000 calc(82% - 7px), transparent 100%);
+  }
   .contents_div .ktx-ticker-list li{ padding-right:18px; }
   .contents_div .ktx-ticker-list li::before{ width:4px; height:4px; margin-right:7px; }
   .contents_div .ktx-sec--intro .ktx-lead{ padding-inline:clamp(0px, calc((100vw - 462px) * 0.2), 28px); }
