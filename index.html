@@ -258,6 +258,11 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
 
 .contents_div .ktx-sec--s3 .ktx-kicker,
 .contents_div .ktx-sec--s3 .ktx-kicker-num{ font-weight:900; }
+/* 운행 확대 리드문 — 섹션 배경색(--c-s1) 아웃글로우 + 흰 글자 선명하게 */
+.contents_div .ktx-sec--s1 .ktx-lead{
+  color:rgba(255,255,255,.96);
+  text-shadow:0 0 2px var(--c-s1), 0 0 5px var(--c-s1), 0 0 10px rgba(30,55,112,.95), 0 0 18px rgba(30,55,112,.85), 0 0 28px rgba(30,55,112,.6);
+}
 .contents_div .ktx-sec--s3 .ktx-lead{ font-weight:500; }
 /* 리드문 형광펜 (흰색 50%, 글자 세로 중앙) */
 .contents_div .ktx-mark{
