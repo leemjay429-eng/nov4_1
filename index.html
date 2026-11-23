@@ -414,7 +414,7 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
     content:attr(data-label); flex:0 0 auto; text-align:left; color:var(--c-sub); font-weight:400;
   }
   .contents_div .ktx-sec--s1 .ktx-tbl td::before{ color:rgba(255,255,255,.85); }
-  .contents_div .ktx-tbl td > span.ktx-val{ margin-left:auto; }
+  .contents_div .ktx-tbl td > span.ktx-val{ margin-left:auto; flex:0 0 auto; white-space:nowrap; }   /* 사파리: 값+캡슐이 소수점 폭 계산 차로 두 줄로 꺾이는 문제 방지 */
   /* 목포·나주: 주중·주말을 한 줄에 나란히 */
   .contents_div .ktx-tbl tr.ktx-tr-pair{ display:grid; grid-template-columns:1fr 1fr; column-gap:0; }
   .contents_div .ktx-tbl tr.ktx-tr-pair td:first-of-type{ padding-right:24px; }
@@ -471,6 +471,10 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
 
 <article class="ktx-wrap">
 
+<!-- TEST: 확인 후 이 줄 삭제 -->
+<div class="jngj-test-spacer" aria-hidden="true" style="height:900px;max-width:800px;margin:auto;display:grid;place-items:center;border:1px solid #cb9;background:linear-gradient(to top right,#0000 calc(50% - 1px),#cb9,#0000 calc(50% + 1px)),linear-gradient(to top left,#0000 calc(50% - 1px),#cb9,#0000 calc(50% + 1px)) #fffdef;font:700 16px sans-serif;color:#7E5E50"><b style="padding:10px 20px;background:#fffdef;border:1px solid #cb9;border-radius:99px">
+  테스트 영역 · 아래로 스크롤 ↓</b></div>
+<!-- TEST: 확인 후 이 줄 삭제  -->
   <!-- 히어로 -->
   <section class="ktx-hero">
     <div class="ktx-fig">
@@ -693,31 +697,6 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
   var root = (cs && cs.closest) ? cs.closest('.contents_div') : null;
   if(!root) root = document.querySelector('.contents_div');
   if(!root || !window.IntersectionObserver) return;
-  var bubs = root.querySelectorAll('.ktx-bub');
-  if(!bubs.length) return;
-  var io = new IntersectionObserver(function(entries){
-    entries.forEach(function(en){
-      if(!en.isIntersecting) return;
-      var r = en.target.querySelector('.ktx-bub-roll');
-      if(r) r.classList.remove('is-wait');
-      io.unobserve(en.target);
-    });
-  }, { threshold:1 });
-  bubs.forEach(function(b){
-    var r = b.querySelector('.ktx-bub-roll');
-    if(!r) return;
-    r.classList.add('is-wait');
-    io.observe(b);
-  });
-})();
-</script>
-
-<script>
-(function(){
-  var cs = document.currentScript;
-  var root = (cs && cs.closest) ? cs.closest('.contents_div') : null;
-  if(!root) root = document.querySelector('.contents_div');
-  if(!root || !window.IntersectionObserver) return;
   if(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
   /* 히어로 — 30% 보이면 재생 */
@@ -746,7 +725,20 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
   var tags = root.querySelector('.ktx-foot .ktx-tags');
   if(tags){ tags.classList.add('ktx-rv'); items.push(tags); }
 
-  function show(el){ el.classList.add('is-in'); }
+  /* 말풍선 숫자 롤링 — 제목이 떠올라 보이기 시작한 뒤에 굴린다 (따로 굴리면 모바일에서 제목이 보이기 전에 거의 끝나 버림) */
+  var rolls = root.querySelectorAll('.ktx-bub-roll');
+  for(var r = 0; r < rolls.length; r++) rolls[r].classList.add('is-wait');
+
+  function show(el){
+    if(el.classList.contains('is-in')) return;
+    el.classList.add('is-in');
+    var wait = el.querySelectorAll('.ktx-bub-roll.is-wait');
+    if(!wait.length) return;
+    var d = (parseInt(el.style.transitionDelay, 10) || 0) + 400;
+    setTimeout(function(){
+      for(var k = 0; k < wait.length; k++) wait[k].classList.remove('is-wait');
+    }, d);
+  }
   var rio = new IntersectionObserver(function(entries){
     entries.forEach(function(en){
       if(!en.isIntersecting) return;
