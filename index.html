@@ -187,7 +187,7 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
 .contents_div .ktx-ticker-list{ display:flex; align-items:center; flex:0 0 auto; }
 .contents_div .ktx-ticker-list li{
   display:inline-flex; align-items:center; flex:0 0 auto; padding-right:26px;
-  font-size:var(--fs-kicker); font-weight:700; line-height:1; letter-spacing:.01em;
+  font-size:var(--fs-ticker, var(--fs-kicker)); font-weight:700; line-height:1; letter-spacing:.01em;
   color:var(--c-main-dk); white-space:nowrap;
 }
 .contents_div .ktx-ticker-list li::before{
@@ -366,12 +366,12 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
     --fs-h3:clamp(16px, calc(16px + (100vw - 375px) * 0.0286), 17px);
     --fs-body:clamp(13.5px, calc(13.5px + (100vw - 375px) * 0.0143), 14px);
     --fs-lead:var(--fs-body); --fs-info:var(--fs-body); --fs-cta:var(--fs-body);
-    --fs-arrow:15px; --fs-nav:12px; --fs-kicker:11.5px; --fs-num:10px; --fs-tagcap:10px;
+    --fs-arrow:15px; --fs-nav:12px; --fs-kicker:12px; --fs-ticker:11.5px; --fs-num:10px; --fs-tagcap:10px;
     --fs-label:10px; --fw-label:400; --fs-check:10px; --fs-caption:10px;
     --fs-hash:clamp(10.5px, calc(10.5px + (100vw - 375px) * 0.0143), 11px);
     --gut:22px;
     --card-py:22px; --card-px:17px;
-    --kick:27px; --rv-y:16px; --bub-q-y:0px; --mark-px:2px; --kick-gap:7px; --kick-slash:10px; --lb-h:21px; --lb-px:9px;
+    --kick:31px; --rv-y:16px; --bub-q-y:0px; --mark-px:2px; --kick-gap:7px; --kick-slash:10px; --lb-h:21px; --lb-px:9px;
     --img-ratio:75%;
   }
   .contents_div .ktx-br--web{ display:none; }
@@ -412,6 +412,11 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
   }
   .contents_div .ktx-sec--s1 .ktx-tbl td::before{ color:rgba(255,255,255,.85); }
   .contents_div .ktx-tbl td > span.ktx-val{ margin-left:auto; flex:0 0 auto; white-space:nowrap; }   /* 사파리: 값+캡슐이 소수점 폭 계산 차로 두 줄로 꺾이는 문제 방지 */
+  /* 말풍선 물음표 정렬 — 아이폰 사파리 글자 자동 확대(text autosizing) 차단 + 정수 px 글자 + 띠 높이 기준(%) 이동 */
+  .contents_div .ktx-wrap{ -webkit-text-size-adjust:100%; text-size-adjust:100%; }
+  .contents_div .ktx-bub{ font-size:round(nearest, .68em, 1px); }
+  .contents_div .ktx-bub-roll{ transform:translateY(calc(-90% + var(--bub-q-y))); }
+  .contents_div .ktx-bub-roll.is-wait{ transform:translateY(0); }
   /* 목포·나주: 주중·주말을 한 줄에 나란히 */
   .contents_div .ktx-tbl tr.ktx-tr-pair{ display:grid; grid-template-columns:1fr 1fr; column-gap:0; }
   .contents_div .ktx-tbl tr.ktx-tr-pair td:first-of-type{ padding-right:24px; }
@@ -467,10 +472,6 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
 
 <article class="ktx-wrap">
 
-<!-- TEST: 확인 후 이 줄 삭제 -->
-<div class="jngj-test-spacer" aria-hidden="true" style="height:900px;max-width:800px;margin:auto;display:grid;place-items:center;border:1px solid #cb9;background:linear-gradient(to top right,#0000 calc(50% - 1px),#cb9,#0000 calc(50% + 1px)),linear-gradient(to top left,#0000 calc(50% - 1px),#cb9,#0000 calc(50% + 1px)) #fffdef;font:700 16px sans-serif;color:#7E5E50"><b style="padding:10px 20px;background:#fffdef;border:1px solid #cb9;border-radius:99px">
-  테스트 영역 · 아래로 스크롤 ↓</b></div>
-<!-- TEST: 확인 후 이 줄 삭제  -->
   <!-- 히어로 -->
   <section class="ktx-hero">
     <div class="ktx-fig">
